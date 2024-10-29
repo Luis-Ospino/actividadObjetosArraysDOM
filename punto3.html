@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 3</title>
+</head>
+<body>
+    <h1>Punto 3</h1>
+    <script>
+        let curso = {
+            "ingles": [],
+            "programacion": [],
+            "html": []
+        }
+            let acumuladorIngles = 0;
+            let acumuladorHtml = 0;
+            let acumuladorProgramacion = 0;
+            for(let i=0; i<3; i++){
+                for(let claves in curso){
+                    curso[claves][i] = Number(prompt("Ingrese la nota #"+(i+1)+" de la materia "+claves+": "));
+                    if(claves === 'ingles'){
+                        acumuladorIngles += curso[claves][i];
+                    }if(claves === 'programacion'){
+                        acumuladorProgramacion += curso[claves][i];
+                    }if(claves === 'html'){
+                        acumuladorHtml += curso[claves][i];
+                    }
+                }
+            }
+
+            alert(`PROMEDIO INGLES: ${(acumuladorIngles/3)} PROMEDIO PROGRAMACIÓN: ${(acumuladorProgramacion/3)} PROMEDIO HTML: ${(acumuladorHtml/3)}`);
+    </script>
+</body>
+</html>

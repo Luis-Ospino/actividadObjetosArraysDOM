@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 2</title>
+</head>
+<body>
+    <h1>Punto 2</h1>
+    <form id="formulario">
+        <label>Introduce los datos del primer arreglo</label><br><br>
+        <input type="text" id="primerArreglo"> 
+        <button type="button" onclick="guardar1()">Guardar</button> <br><br>
+        <label>Introduce los datos del segundo arreglo</label><br><br>
+        <input type="text" id="segundoArreglo"> 
+        <button type="button" onclick="guardar2()">Guardar</button>
+    </form> <br><br>
+    <button type="button" id="mostrar" onclick="resultado()">Mostrar valores</button>
+    <p id="enunciado"></p>
+
+    <script>
+        let arreglo1 = [];
+        let arreglo2 = [];
+
+        function guardar1() {
+            let dato1 = document.getElementById("primerArreglo").value;
+            arreglo1.push(dato1);
+            console.log(arreglo1) 
+            document.getElementById("primerArreglo").value = "";       
+        }
+        
+        function guardar2(){
+            let dato2 = document.getElementById("segundoArreglo").value;
+            arreglo2.push(dato2);
+            console.log(arreglo2)
+            document.getElementById("segundoArreglo").value = "";
+        }
+        function resultado(){
+            document.getElementById("enunciado").innerHTML = (`Arreglo 1: ${arreglo1.join(', ')} <br> Arreglo 2: ${arreglo2.join(', ')}`)
+        }
+
+    </script>
+</body>
+</html>
